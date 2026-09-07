@@ -1,0 +1,44 @@
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api';
+export const ProductService = {
+    async getAll(category) {
+        const url = category ? `${API_BASE_URL}/products?category=${encodeURIComponent(category)}` : `${API_BASE_URL}/products`;
+        const res = await fetch(url);
+        if (!res.ok)
+            throw new Error(`Error ${res.status}: ${res.statusText}`);
+        return res.json();
+    },
+    async getById(id) {
+        const res = await fetch(`${API_BASE_URL}/products/${id}`);
+        if (!res.ok)
+            throw new Error(`Error ${res.status}: ${res.statusText}`);
+        return res.json();
+    },
+    async create(product) {
+        const res = await fetch(`${API_BASE_URL}/products`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(product),
+        });
+        if (!res.ok)
+            throw new Error(`Error al crear producto: ${res.statusText}`);
+        return res.json();
+    },
+    async update(id, product) {
+        const res = await fetch(`${API_BASE_URL}/products/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(product),
+        });
+        if (!res.ok)
+            throw new Error(`Error al actualizar producto: ${res.statusText}`);
+        return res.json();
+    },
+    async delete(id) {
+        const res = await fetch(`${API_BASE_URL}/products/${id}`, {
+            method: 'DELETE',
+        });
+        if (!res.ok)
+            throw new Error(`Error al eliminar producto: ${res.statusText}`);
+    },
+};
+//# sourceMappingURL=api.js.map
