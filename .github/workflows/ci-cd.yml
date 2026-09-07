@@ -130,10 +130,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Start Stack with Docker Compose
         run: |
-                  echo "Construyendo y levantando contenedor Docker..."
-                  docker compose build --no-cache
-                  docker compose up -d --force-recreate
-                  echo "Contenedor iniciado exitosamente"
+                  echo "Construyendo y levantando contenedores Docker..."
+                  docker compose up -d --build
+                  echo "Contenedores iniciados exitosamente"
       - name: Wait for Backend Healthcheck
         run: sleep 20
       - name: Execute Smoke Test (cURL API)
