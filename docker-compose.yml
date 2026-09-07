@@ -4,7 +4,7 @@ services:
   backend:
     build: # Aqui la unica manera de hacerlo era con build teniendo en cuenta el docker compose up -d --build
       # o tambien se podia hacer solamente con image, pero como me daba cuenta del nombre de la imagen y donde
-      # iba a quedar guardada. PREGUNTARLE AL PROFE. OJO
+      # iba a quedar guardada. PREGUNTARLE AL PROFE. OJO.
       context: ./backend
       dockerfile: Dockerfile
     container_name: container-backend
