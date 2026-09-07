@@ -134,7 +134,7 @@ jobs:
         run: sleep 20
       - name: Execute Smoke Test (cURL API)
         run: |
-          STATUS=$(curl -s -o /dev/null -w " %{http_code}" http://localhost:8080/api/products)
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/api/products)
           echo "HTTP Status: $STATUS"
           if [ "$STATUS" -ne 200  ]; then exit 1; fi
       - name: Stop Containers
