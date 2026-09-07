@@ -131,10 +131,9 @@ jobs:
       - name: Start Stack with Docker Compose
         run: |
                   echo "Construyendo y levantando contenedor Docker..."
-                  docker compose down --remove-orphans || true
                   docker compose build --no-cache
                   docker compose up -d --force-recreate
-                  echo "Contenedor iniciado exitosamente:"
+                  echo "Contenedor iniciado exitosamente"
       - name: Wait for Backend Healthcheck
         run: sleep 20
       - name: Execute Smoke Test (cURL API)
