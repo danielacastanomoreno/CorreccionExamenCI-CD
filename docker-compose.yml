@@ -25,7 +25,7 @@ services:
     container_name: container-frontend
     restart: unless-stopped
     ports:
-        - "6001:6001" # Primer puerto el del host, segundo puerto el del container. OJO
+        - "6001:4173" # Primer puerto el del host, segundo puerto el del container. OJO
     depends_on:
       backend:
         condition: service_healthy
