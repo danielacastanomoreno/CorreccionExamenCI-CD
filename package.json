@@ -1,5 +1,9 @@
 {
   "devDependencies": {
     "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "nestjs": "^0.0.1",
+    "nextjs": "^0.0.3"
   }
 }

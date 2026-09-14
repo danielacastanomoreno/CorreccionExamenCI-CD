@@ -30,7 +30,7 @@ jobs:
   # TODO: actions/upload-artifact@v4 (Subir backend/target/*.jar como 'backend-jar')
   test-backend:
     name: Backend Unit Tests & Package
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Descargar codigo fuente
         uses: actions/checkout@v4

@@ -2,9 +2,7 @@
 
 services:
   backend:
-    build: # Aqui la unica manera de hacerlo era con build teniendo en cuenta el docker compose up -d --build
-      # o tambien se podia hacer solamente con image, pero como me daba cuenta del nombre de la imagen y donde
-      # iba a quedar guardada. PREGUNTARLE AL PROFE. OJO.
+    build:
       context: ./backend
       dockerfile: Dockerfile
     container_name: container-backend
@@ -27,7 +25,7 @@ services:
     container_name: container-frontend
     restart: unless-stopped
     ports:
-        - "3001:3000" # Primer puerto el del host, segundo puerto el del container. OJO
+        - "6001:6001" # Primer puerto el del host, segundo puerto el del container. OJO
     depends_on:
       backend:
         condition: service_healthy
