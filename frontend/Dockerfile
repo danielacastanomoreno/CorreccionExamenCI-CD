@@ -11,7 +11,7 @@ COPY package*.json /app
 RUN npm ci
 
 # Indicamos que este contenedor se comunica por el puerto 80/tcp. Puerto 80 del contenedor NO DEL HOST. OJO
-EXPOSE 4731
+EXPOSE 4173
 
 # Copiar codigo fuente y compilar
 COPY . .
