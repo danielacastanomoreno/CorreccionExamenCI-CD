@@ -65,7 +65,7 @@ jobs:
   # TODO: Ejecutar `npm install`, `npm run lint` y `npm run build` en frontend/ YA
   test-frontend:
     name: Frontend Lint & Build
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -94,7 +94,7 @@ jobs:
   build-docker:
     name: Build Multi-Stage Docker Images
     needs: [ test-backend, test-frontend]
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -124,7 +124,7 @@ jobs:
   smoke-test:
     name: Compose Up & Smoke Testing
     needs: [ build-docker]
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
