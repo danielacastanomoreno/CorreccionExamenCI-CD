@@ -1,7 +1,7 @@
 import type { Product } from '../types/product.ts';
 
 const IP_INSTANCE = '35.175.171.226'
-const API_BASE_URL = (import.meta as any).env.VITE_API_URL || `http://${IP_INSTANCE}:8080/api`;
+const API_BASE_URL = (import.meta as any).env.VITE_API_URL || 'http://localhost:8080/api';
 
 export const ProductService = {
   async getAll(category?: string): Promise<Product[]> {
