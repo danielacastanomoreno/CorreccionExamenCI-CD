@@ -30,7 +30,7 @@ jobs:
   # TODO: actions/upload-artifact@v4 (Subir backend/target/*.jar como 'backend-jar')
   test-backend:
     name: Backend Unit Tests & Package
-    runs-on: self-hosted # Si se usa el de GitHub, se pone ubuntu-latest. OJO
+    runs-on: self-hosted # Si se usa el de GitHub, se pone ubuntu-latest. ¡OJO!
     steps:
       - name: Descargar codigo fuente
         uses: actions/checkout@v4
