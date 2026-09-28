@@ -15,9 +15,9 @@ name: CI/CD Pipeline - Product Application
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, taller/nexus ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, taller/nexus ]
 
 jobs:
   # ----------------------------------------------------------------------------
