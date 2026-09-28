@@ -20,6 +20,8 @@
     
     <properties>
         <java.version>17</java.version>
+        <nexus.url>http://98.81.85.33:8081</nexus.url>
+
     </properties>
     
     <dependencies>
@@ -57,4 +59,18 @@
         <!-- Jar's name -->
         <finalName>backend-jar</finalName>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <name>Nexus - releases inmutables</name>
+            <url>${nexus.url}/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>Nexus - snapshots (mutables)</name>
+            <url>${nexus.url}/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 </project>
